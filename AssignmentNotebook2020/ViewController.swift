@@ -7,13 +7,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    @IBOutlet weak var myTableView: UITableView!
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem)
+    {
+        
+        
+    }
+    
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem)
+    {
+        
+        
+    }
 }
 
