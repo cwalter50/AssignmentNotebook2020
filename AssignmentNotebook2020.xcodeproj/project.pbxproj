@@ -14,6 +14,7 @@
 		3899104C257535D4002A2D44 /* AssignmentNotebook2020.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3899104A257535D4002A2D44 /* AssignmentNotebook2020.xcdatamodeld */; };
 		3899104E257535DB002A2D44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3899104D257535DB002A2D44 /* Assets.xcassets */; };
 		38991051257535DB002A2D44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3899104F257535DB002A2D44 /* LaunchScreen.storyboard */; };
+		389910652577D923002A2D44 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389910642577D923002A2D44 /* Assignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3899104D257535DB002A2D44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38991050257535DB002A2D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38991052257535DC002A2D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		389910642577D923002A2D44 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				38991041257535D4002A2D44 /* AppDelegate.swift */,
 				38991043257535D4002A2D44 /* SceneDelegate.swift */,
 				38991045257535D4002A2D44 /* ViewController.swift */,
+				389910642577D923002A2D44 /* Assignment.swift */,
 				38991047257535D4002A2D44 /* Main.storyboard */,
 				3899104D257535DB002A2D44 /* Assets.xcassets */,
 				3899104F257535DB002A2D44 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				38991046257535D4002A2D44 /* ViewController.swift in Sources */,
 				3899104C257535D4002A2D44 /* AssignmentNotebook2020.xcdatamodeld in Sources */,
 				38991042257535D4002A2D44 /* AppDelegate.swift in Sources */,
+				389910652577D923002A2D44 /* Assignment.swift in Sources */,
 				38991044257535D4002A2D44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
