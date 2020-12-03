@@ -12,6 +12,7 @@ class Assignment
     var name: String
     var date: String
     
+    
     init(n: String, d: String)
     {
         self.name = n
