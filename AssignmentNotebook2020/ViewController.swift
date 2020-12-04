@@ -46,6 +46,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let submitButton = UIAlertAction(title: "Submit", style: .default, handler: {
             action in
             // write code here for when the user taps the button
+            let nameTF = alert.textFields![0]
+            let dateTF = alert.textFields![1]
+            
+            // create new assignment
+            let newAssignment = Assignment(n: nameTF.text ?? "Study", d: dateTF.text ?? "Tomorrow")
+            
+            // append to assignments
+            self.assignments.append(newAssignment)
+            
+            // reload the table
+            self.myTableView.reloadData()
+            
         })
         let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
@@ -55,16 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         present(alert, animated: true, completion: nil)
         
         
-        
-        
-        // create new assignment
-        let newAssignment = Assignment(n: "Test", d: "Tomorrow")
-        
-        // append to assignments
-        assignments.append(newAssignment)
-        
-        // reload the table
-        myTableView.reloadData()
+       
         
     }
     
