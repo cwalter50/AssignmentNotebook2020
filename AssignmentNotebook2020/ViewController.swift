@@ -34,6 +34,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem)
     {
+        let alert = UIAlertController(title: "Add a New Assignment", message: "Fill out the form below", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: {
+            textfield in
+            textfield.placeholder = "Enter Assignment Name"
+        })
+        alert.addTextField(configurationHandler: {
+            textfield in
+            textfield.placeholder = "Enter Assignment Due Date"
+        })
+        let submitButton = UIAlertAction(title: "Submit", style: .default, handler: {
+            action in
+            // write code here for when the user taps the button
+        })
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        alert.addAction(submitButton)
+        alert.addAction(cancelButton)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+        
+        
         // create new assignment
         let newAssignment = Assignment(n: "Test", d: "Tomorrow")
         
