@@ -21,15 +21,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTableView.delegate = self
         myTableView.dataSource = self
         
-        let one = Assignment(n: "Algebra 2 HW", d: "12/4")
-        let two = Assignment(n: "Chemistry HW", d: "12/10")
-        let three = Assignment(n: "Build a shelf", d: "12/15")
+//        let one = Assignment(n: "Algebra 2 HW", d: "12/4")
+//        let two = Assignment(n: "Chemistry HW", d: "12/10")
+//        let three = Assignment(n: "Build a shelf", d: "12/15")
+//        
+//        assignments.append(one)
+//        assignments.append(two)
+//        assignments.append(three)
         
-        assignments.append(one)
-        assignments.append(two)
-        assignments.append(three)
-        
-        
+        loadData()
+    }
+    
+    
+    func saveData()
+    {
+        do {
+            // Create JSON Encoder
+            let encoder = JSONEncoder()
+
+            // Encode Note
+            let data = try encoder.encode(assignments)
+
+            // Write/Set Data
+            UserDefaults.standard.set(data, forKey: "notes")
+
+        } catch {
+            print("Unable to Encode Array of Notes (\(error))")
+        }
+    }
+    
+    func loadData()
+    {
+        // Read/Get Data
+        if let data = UserDefaults.standard.data(forKey: "notes") {
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Decode Note
+                assignments = try decoder.decode([Assignment].self, from: data)
+
+            } catch {
+                print("Unable to Decode Notes (\(error))")
+            }
+        }
     }
 
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem)
@@ -55,6 +90,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // append to assignments
             self.assignments.append(newAssignment)
             
+            self.saveData()
+            
             // reload the table
             self.myTableView.reloadData()
             
@@ -67,9 +104,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         present(alert, animated: true, completion: nil)
         
         
-       
+        // User Defaults: Small pieces of info locally
+
         
     }
+    
+    
     
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem)
     {

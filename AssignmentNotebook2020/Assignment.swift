@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Assignment
+struct Assignment: Codable
 {
     var name: String
     var date: String
