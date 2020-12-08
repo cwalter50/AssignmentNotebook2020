@@ -113,7 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem)
     {
-        
+        myTableView.isEditing = !myTableView.isEditing
         
     }
     
@@ -138,5 +138,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete
+        {
+            // remove the object from array
+            assignments.remove(at: indexPath.row)
+            // remove object from tableview
+            myTableView.deleteRows(at: [indexPath], with: .fade)
+            // save data
+            saveData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if cell!.accessoryType == .none
+        {
+            cell?.accessoryType = .checkmark
+        }
+        else
+        {
+            cell?.accessoryType = .none
+        }
+        
+    }
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//
+//        let cell = tableView.cellForRow(at: indexPath)
+//
+//        cell?.accessoryType = .none
+//    }
+    
+    
+    
+    
 }
 
